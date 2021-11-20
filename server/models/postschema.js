@@ -3,13 +3,17 @@ const mongoose = require('mongoose');
 const postSchema = mongoose.Schema({
     title: {
         type: String,
-        required: true,
+        required: [true,"please provide title"],
         maxLength: 20
     },
-    message: {
+    description: {
         type: String,
-        required: true,
+        required: [true,"please provide description"],
         maxLength: 30
+    },
+    category: {
+        type: String,
+        required: [true,"please provide category"]
     },
     creator: {
         type: String,
